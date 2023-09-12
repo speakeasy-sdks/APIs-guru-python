@@ -5,7 +5,6 @@ import dataclasses
 import dateutil.parser
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from marshmallow import fields
 from openapi import utils
 from typing import Optional
 
@@ -30,7 +29,7 @@ class APIVersionInfo:
 
 @dataclasses.dataclass
 class APIVersion:
-    added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
+    added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp when the version was added"""
     info: APIVersionInfo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info') }})
     r"""Copy of `info` section from OpenAPI definition"""
@@ -40,7 +39,7 @@ class APIVersion:
     r"""URL to OpenAPI definition in JSON format"""
     swagger_yaml_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('swaggerYamlUrl') }})
     r"""URL to OpenAPI definition in YAML format"""
-    updated: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
+    updated: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp when the version was updated"""
     external_docs: Optional[APIVersionExternalDocs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalDocs'), 'exclude': lambda f: f is None }})
     r"""Copy of `externalDocs` section from OpenAPI definition"""

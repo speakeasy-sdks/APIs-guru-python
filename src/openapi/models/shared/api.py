@@ -6,7 +6,6 @@ import dateutil.parser
 from ..shared import apiversion as shared_apiversion
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from marshmallow import fields
 from openapi import utils
 
 
@@ -15,7 +14,7 @@ from openapi import utils
 @dataclasses.dataclass
 class API:
     r"""Meta information about API"""
-    added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
+    added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp when the API was first added to the directory"""
     preferred: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferred') }})
     r"""Recommended version"""
