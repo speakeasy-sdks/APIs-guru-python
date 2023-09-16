@@ -34,7 +34,7 @@ if res.api is not None:
 ## Available Resources and Operations
 
 
-### [ap_is](docs/sdks/apis/README.md)
+### [APIs](docs/sdks/apis/README.md)
 
 * [get_api](docs/sdks/apis/README.md#get_api) - Retrieve one version of a particular API
 * [get_metrics](docs/sdks/apis/README.md#get_metrics) - Get basic metrics
