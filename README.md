@@ -10,8 +10,6 @@ pip install git+https://github.com/speakeasy-sdks/APIs-guru-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import openapi
 from openapi.models import operations
@@ -44,6 +42,32 @@ if res.api is not None:
 * [get_services](docs/sdks/apis/README.md#get_services) - List all serviceNames for a particular provider
 * [list_ap_is](docs/sdks/apis/README.md#list_ap_is) - List all APIs
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
