@@ -32,7 +32,7 @@ if res.api is not None:
 ## Available Resources and Operations
 
 
-### [APIs](docs/sdks/apis/README.md)
+### [ap_is](docs/sdks/apis/README.md)
 
 * [get_api](docs/sdks/apis/README.md#get_api) - Retrieve one version of a particular API
 * [get_metrics](docs/sdks/apis/README.md#get_metrics) - Get basic metrics
@@ -47,8 +47,6 @@ if res.api is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -61,8 +59,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

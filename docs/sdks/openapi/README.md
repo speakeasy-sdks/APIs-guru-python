@@ -1,5 +1,6 @@
 # Openapi SDK
 
+
 ## Overview
 
 APIs.guru: Wikipedia for Web APIs. Repository of API definitions in OpenAPI format.
