@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from openapi import utils
-from openapi.models import errors, operations, shared
-from typing import Optional
+from openapi.models import errors, operations
+from typing import Any, Optional
 
 class APIs:
     r"""Actions relating to APIs in the collection"""
@@ -33,7 +33,7 @@ class APIs:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.API])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.api = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -62,7 +62,7 @@ class APIs:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Metrics])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.metrics = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -91,7 +91,7 @@ class APIs:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, shared.API]])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, dict[str, Any]]])
                 res.ap_is = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -147,7 +147,7 @@ class APIs:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.API])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.api = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -207,7 +207,7 @@ class APIs:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, shared.API]])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, dict[str, Any]]])
                 res.ap_is = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import metrics as shared_metrics
-from typing import Optional
+from typing import Any, Optional
 
 
 
@@ -14,7 +13,7 @@ class GetMetricsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    metrics: Optional[shared_metrics.Metrics] = dataclasses.field(default=None)
+    metrics: Optional[dict[str, Any]] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
