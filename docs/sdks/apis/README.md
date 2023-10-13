@@ -36,6 +36,7 @@ res = s.ap_is.get_api(req)
 
 if res.api is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.ap_is.get_metrics()
 
 if res.metrics is not None:
     # handle response
+    pass
 ```
 
 
@@ -99,6 +101,7 @@ res = s.ap_is.get_provider(req)
 
 if res.ap_is is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -131,6 +134,7 @@ res = s.ap_is.get_providers()
 
 if res.get_providers_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -161,6 +165,7 @@ res = s.ap_is.get_service_api(req)
 
 if res.api is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -196,6 +201,7 @@ res = s.ap_is.get_services(req)
 
 if res.get_services_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -232,6 +238,7 @@ res = s.ap_is.list_ap_is()
 
 if res.ap_is is not None:
     # handle response
+    pass
 ```
 
 
