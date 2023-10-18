@@ -7,14 +7,12 @@ from ..shared import api as shared_api
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetServiceAPIRequest:
     api: str = dataclasses.field(metadata={'path_param': { 'field_name': 'api', 'style': 'simple', 'explode': False }})
     provider: str = dataclasses.field(metadata={'path_param': { 'field_name': 'provider', 'style': 'simple', 'explode': False }})
     service: str = dataclasses.field(metadata={'path_param': { 'field_name': 'service', 'style': 'simple', 'explode': False }})
     
-
 
 
 

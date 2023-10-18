@@ -9,12 +9,10 @@ from openapi import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class APIVersionExternalDocs:
     r"""Copy of `externalDocs` section from OpenAPI definition"""
     
-
 
 
 
@@ -26,7 +24,6 @@ class APIVersionInfo:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class APIVersion:
     added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})

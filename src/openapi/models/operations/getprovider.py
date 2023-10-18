@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import api as shared_api
-from typing import Optional
-
+from typing import Dict, Optional
 
 
 @dataclasses.dataclass
@@ -15,14 +14,13 @@ class GetProviderRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetProviderResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    ap_is: Optional[dict[str, shared_api.API]] = dataclasses.field(default=None)
+    ap_is: Optional[Dict[str, shared_api.API]] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

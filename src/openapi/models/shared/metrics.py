@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from openapi import utils
-from typing import Any, Optional
+from typing import Any, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MetricsThisWeek:
     r"""Summary totals for the last 7 days"""
@@ -21,7 +20,6 @@ class MetricsThisWeek:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Metrics:
     r"""List of basic metrics"""
@@ -31,7 +29,7 @@ class Metrics:
     r"""Total number of endpoints inside all definitions"""
     num_specs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numSpecs') }})
     r"""Number of API definitions including different versions of the same API"""
-    datasets: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets'), 'exclude': lambda f: f is None }})
+    datasets: Optional[List[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasets'), 'exclude': lambda f: f is None }})
     r"""Data used for charting etc"""
     fixed_pct: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixedPct'), 'exclude': lambda f: f is None }})
     r"""Percentage of all APIs where auto fixes have been applied"""
