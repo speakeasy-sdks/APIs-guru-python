@@ -1,4 +1,4 @@
-# APIVersionExternalDocs
+# ExternalDocs
 
 Copy of `externalDocs` section from OpenAPI definition
 

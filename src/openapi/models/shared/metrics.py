@@ -9,7 +9,7 @@ from typing import Any, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class MetricsThisWeek:
+class ThisWeek:
     r"""Summary totals for the last 7 days"""
     added: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
     r"""APIs added in the last week"""
@@ -45,7 +45,7 @@ class Metrics:
     r"""Number of API providers in directory"""
     stars: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stars'), 'exclude': lambda f: f is None }})
     r"""GitHub stars for our main repo"""
-    this_week: Optional[MetricsThisWeek] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thisWeek'), 'exclude': lambda f: f is None }})
+    this_week: Optional[ThisWeek] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thisWeek'), 'exclude': lambda f: f is None }})
     r"""Summary totals for the last 7 days"""
     unofficial: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unofficial'), 'exclude': lambda f: f is None }})
     r"""Number of unofficial APIs"""

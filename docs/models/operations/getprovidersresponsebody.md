@@ -1,4 +1,4 @@
-# GetProviders200ApplicationJSON
+# GetProvidersResponseBody
 
 OK
 

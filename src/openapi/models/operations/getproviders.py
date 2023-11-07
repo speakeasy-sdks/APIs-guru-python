@@ -10,7 +10,7 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetProviders200ApplicationJSON:
+class GetProvidersResponseBody:
     r"""OK"""
     data: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -23,7 +23,7 @@ class GetProvidersResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_providers_200_application_json_object: Optional[GetProviders200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetProvidersResponseBody] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

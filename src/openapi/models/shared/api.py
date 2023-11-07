@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import apiversion as shared_apiversion
+from .apiversion import APIVersion
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from openapi import utils
@@ -18,7 +18,7 @@ class API:
     r"""Timestamp when the API was first added to the directory"""
     preferred: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferred') }})
     r"""Recommended version"""
-    versions: Dict[str, shared_apiversion.APIVersion] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions') }})
+    versions: Dict[str, APIVersion] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions') }})
     r"""List of supported versions of the API"""
     
 

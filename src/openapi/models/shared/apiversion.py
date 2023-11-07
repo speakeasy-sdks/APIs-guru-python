@@ -10,14 +10,14 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class APIVersionExternalDocs:
+class ExternalDocs:
     r"""Copy of `externalDocs` section from OpenAPI definition"""
     
 
 
 
 @dataclasses.dataclass
-class APIVersionInfo:
+class Info:
     r"""Copy of `info` section from OpenAPI definition"""
     
 
@@ -28,7 +28,7 @@ class APIVersionInfo:
 class APIVersion:
     added: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp when the version was added"""
-    info: APIVersionInfo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info') }})
+    info: Info = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info') }})
     r"""Copy of `info` section from OpenAPI definition"""
     openapi_ver: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('openapiVer') }})
     r"""The value of the `openapi` or `swagger` property of the source definition"""
@@ -38,7 +38,7 @@ class APIVersion:
     r"""URL to OpenAPI definition in YAML format"""
     updated: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Timestamp when the version was updated"""
-    external_docs: Optional[APIVersionExternalDocs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalDocs'), 'exclude': lambda f: f is None }})
+    external_docs: Optional[ExternalDocs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('externalDocs'), 'exclude': lambda f: f is None }})
     r"""Copy of `externalDocs` section from OpenAPI definition"""
     link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link'), 'exclude': lambda f: f is None }})
     r"""Link to the individual API entry for this API"""

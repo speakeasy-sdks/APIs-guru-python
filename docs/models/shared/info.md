@@ -1,4 +1,4 @@
-# APIVersionInfo
+# Info
 
 Copy of `info` section from OpenAPI definition
 

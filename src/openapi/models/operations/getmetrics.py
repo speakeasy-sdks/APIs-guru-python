@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import metrics as shared_metrics
+from ...models.shared import metrics as shared_metrics
 from typing import Optional
 
 

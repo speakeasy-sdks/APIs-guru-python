@@ -1,4 +1,4 @@
-# GetServices200ApplicationJSON
+# GetServicesResponseBody
 
 OK
 

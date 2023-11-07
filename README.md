@@ -33,7 +33,7 @@ if res.api is not None:
 ## Available Resources and Operations
 
 
-### [ap_is](docs/sdks/apis/README.md)
+### [.ap_is](docs/sdks/apis/README.md)
 
 * [get_api](docs/sdks/apis/README.md#get_api) - Retrieve one version of a particular API
 * [get_metrics](docs/sdks/apis/README.md#get_metrics) - Get basic metrics
@@ -68,8 +68,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -87,13 +85,12 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import openapi
 from openapi.models import operations
 
 s = openapi.Openapi(
-    server_idx=0
+    server_idx=0,
 )
 
 req = operations.GetAPIRequest(
@@ -113,13 +110,12 @@ if res.api is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import openapi
 from openapi.models import operations
 
 s = openapi.Openapi(
-    server_url="https://api.apis.guru/v2"
+    server_url="https://api.apis.guru/v2",
 )
 
 req = operations.GetAPIRequest(
@@ -153,8 +149,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = openapi.Openapi(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

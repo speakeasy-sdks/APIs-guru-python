@@ -4,4 +4,4 @@ from .api import *
 from .apiversion import *
 from .metrics import *
 
-__all__ = ["API","APIVersion","APIVersionExternalDocs","APIVersionInfo","Metrics","MetricsThisWeek"]
+__all__ = ["API","APIVersion","ExternalDocs","Info","Metrics","ThisWeek"]

@@ -1,5 +1,5 @@
 # APIs
-(*ap_is*)
+(*.ap_is*)
 
 ## Overview
 
@@ -61,7 +61,6 @@ Just stunning numbers to put on a front page and are intended purely for WoW eff
 
 ```python
 import openapi
-
 
 s = openapi.Openapi()
 
@@ -126,13 +125,12 @@ List all the providers in the directory
 ```python
 import openapi
 
-
 s = openapi.Openapi()
 
 
 res = s.ap_is.get_providers()
 
-if res.get_providers_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -199,7 +197,7 @@ req = operations.GetServicesRequest(
 
 res = s.ap_is.get_services(req)
 
-if res.get_services_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -229,7 +227,6 @@ This allows you to generate some simple views without needing to fetch the OpenA
 
 ```python
 import openapi
-
 
 s = openapi.Openapi()
 

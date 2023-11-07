@@ -17,7 +17,7 @@ class GetServicesRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetServices200ApplicationJSON:
+class GetServicesResponseBody:
     r"""OK"""
     data: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -30,7 +30,7 @@ class GetServicesResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_services_200_application_json_object: Optional[GetServices200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetServicesResponseBody] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
