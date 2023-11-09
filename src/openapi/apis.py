@@ -13,6 +13,7 @@ class APIs:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_api(self, request: operations.GetAPIRequest) -> operations.GetAPIResponse:
         r"""Retrieve one version of a particular API
         Returns the API entry for one specific version of an API where there is no serviceName.
@@ -42,6 +43,7 @@ class APIs:
 
         return res
 
+    
     
     def get_metrics(self) -> operations.GetMetricsResponse:
         r"""Get basic metrics
@@ -74,6 +76,7 @@ class APIs:
         return res
 
     
+    
     def get_provider(self, request: operations.GetProviderRequest) -> operations.GetProviderResponse:
         r"""List all APIs for a particular provider
         List all APIs in the directory for a particular providerName
@@ -105,6 +108,7 @@ class APIs:
         return res
 
     
+    
     def get_providers(self) -> operations.GetProvidersResponse:
         r"""List all providers
         List all the providers in the directory
@@ -134,6 +138,7 @@ class APIs:
 
         return res
 
+    
     
     def get_service_api(self, request: operations.GetServiceAPIRequest) -> operations.GetServiceAPIResponse:
         r"""Retrieve one version of a particular API with a serviceName.
@@ -165,6 +170,7 @@ class APIs:
         return res
 
     
+    
     def get_services(self, request: operations.GetServicesRequest) -> operations.GetServicesResponse:
         r"""List all serviceNames for a particular provider
         List all serviceNames in the directory for a particular providerName
@@ -194,6 +200,7 @@ class APIs:
 
         return res
 
+    
     
     def list_ap_is(self) -> operations.ListAPIsResponse:
         r"""List all APIs

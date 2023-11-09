@@ -1,5 +1,5 @@
 # APIs
-(*.ap_is*)
+(*ap_is*)
 
 ## Overview
 
@@ -49,7 +49,11 @@ if res.api is not None:
 ### Response
 
 **[operations.GetAPIResponse](../../models/operations/getapiresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_metrics
 
@@ -76,7 +80,11 @@ if res.metrics is not None:
 ### Response
 
 **[operations.GetMetricsResponse](../../models/operations/getmetricsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_provider
 
@@ -113,7 +121,11 @@ if res.ap_is is not None:
 ### Response
 
 **[operations.GetProviderResponse](../../models/operations/getproviderresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_providers
 
@@ -139,7 +151,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetProvidersResponse](../../models/operations/getprovidersresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_service_api
 
@@ -176,7 +192,11 @@ if res.api is not None:
 ### Response
 
 **[operations.GetServiceAPIResponse](../../models/operations/getserviceapiresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_services
 
@@ -212,7 +232,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetServicesResponse](../../models/operations/getservicesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_ap_is
 
@@ -242,4 +266,8 @@ if res.ap_is is not None:
 ### Response
 
 **[operations.ListAPIsResponse](../../models/operations/listapisresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

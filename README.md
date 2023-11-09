@@ -33,7 +33,7 @@ if res.api is not None:
 ## Available Resources and Operations
 
 
-### [.ap_is](docs/sdks/apis/README.md)
+### [ap_is](docs/sdks/apis/README.md)
 
 * [get_api](docs/sdks/apis/README.md#get_api) - Retrieve one version of a particular API
 * [get_metrics](docs/sdks/apis/README.md#get_metrics) - Get basic metrics
@@ -67,7 +67,38 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import openapi
+from openapi.models import operations
+
+s = openapi.Openapi()
+
+req = operations.GetAPIRequest(
+    api='2.1.0',
+    provider='apis.guru',
+)
+
+res = None
+try:
+    res = s.ap_is.get_api(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.api is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -139,7 +170,7 @@ if res.api is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import openapi
