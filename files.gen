@@ -8,6 +8,7 @@ src/openapi/utils/__init__.py
 src/openapi/utils/retries.py
 src/openapi/utils/utils.py
 src/openapi/models/errors/sdkerror.py
+tests/helpers.py
 src/openapi/models/operations/getapi.py
 src/openapi/models/operations/getmetrics.py
 src/openapi/models/operations/getprovider.py
