@@ -1,0 +1,65 @@
+lockVersion: 2.0.0
+id: c2b83fe0-db87-42bf-b88a-4308b9111f05
+management:
+  docChecksum: 84f2dfe88716ae569e44a0b832ed3e94
+  docVersion: 2.2.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 3.1.1
+  configChecksum: 4124ea1e102cd3c93a857956c726d96d
+  repoURL: https://github.com/speakeasy-sdks/APIs-guru-python.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/APIs-guru-python.git
+features:
+  python:
+    core: 4.4.0
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/openapi/sdkconfiguration.py
+  - src/openapi/apis.py
+  - src/openapi/sdk.py
+  - pylintrc
+  - setup.py
+  - src/openapi/__init__.py
+  - src/openapi/utils/__init__.py
+  - src/openapi/utils/retries.py
+  - src/openapi/utils/utils.py
+  - src/openapi/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/openapi/models/operations/getapi.py
+  - src/openapi/models/operations/getmetrics.py
+  - src/openapi/models/operations/getprovider.py
+  - src/openapi/models/operations/getproviders.py
+  - src/openapi/models/operations/getserviceapi.py
+  - src/openapi/models/operations/getservices.py
+  - src/openapi/models/operations/listapis.py
+  - src/openapi/models/shared/api.py
+  - src/openapi/models/shared/apiversion.py
+  - src/openapi/models/shared/metrics.py
+  - src/openapi/models/__init__.py
+  - src/openapi/models/errors/__init__.py
+  - src/openapi/models/operations/__init__.py
+  - src/openapi/models/shared/__init__.py
+  - docs/models/operations/getapirequest.md
+  - docs/models/operations/getapiresponse.md
+  - docs/models/operations/getmetricsresponse.md
+  - docs/models/operations/getproviderrequest.md
+  - docs/models/operations/getproviderresponse.md
+  - docs/models/operations/getprovidersresponsebody.md
+  - docs/models/operations/getprovidersresponse.md
+  - docs/models/operations/getserviceapirequest.md
+  - docs/models/operations/getserviceapiresponse.md
+  - docs/models/operations/getservicesrequest.md
+  - docs/models/operations/getservicesresponsebody.md
+  - docs/models/operations/getservicesresponse.md
+  - docs/models/operations/listapisresponse.md
+  - docs/models/shared/api.md
+  - docs/models/shared/externaldocs.md
+  - docs/models/shared/info.md
+  - docs/models/shared/apiversion.md
+  - docs/models/shared/thisweek.md
+  - docs/models/shared/metrics.md
+  - docs/sdks/openapi/README.md
+  - docs/sdks/apis/README.md
+  - USAGE.md
+  - .gitattributes
