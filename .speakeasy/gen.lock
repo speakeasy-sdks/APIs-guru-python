@@ -4,15 +4,15 @@ management:
   docChecksum: 84f2dfe88716ae569e44a0b832ed3e94
   docVersion: 2.2.0
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 3.1.4
-  configChecksum: a73ba3190897b6b3be7dd2022235b749
+  generationVersion: 2.248.1
+  releaseVersion: 4.0.0
+  configChecksum: 05ef3d9f782958caeeb37be0cc1324a9
   repoURL: https://github.com/speakeasy-sdks/APIs-guru-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/APIs-guru-python.git
 features:
   python:
-    core: 4.4.3
+    core: 4.4.4
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/openapi/sdkconfiguration.py
