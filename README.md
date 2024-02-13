@@ -65,7 +65,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import openapi
-from openapi.models import operations
+from openapi.models import errors, operations
 
 s = openapi.Openapi()
 
@@ -78,7 +78,7 @@ res = None
 try:
     res = s.ap_is.get_api(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.api is not None:
