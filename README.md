@@ -29,6 +29,7 @@ res = s.ap_is.get_api(req)
 if res.api is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -84,6 +85,7 @@ except errors.SDKError as e:
 if res.api is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -120,6 +122,7 @@ res = s.ap_is.get_api(req)
 if res.api is not None:
     # handle response
     pass
+
 ```
 
 
@@ -144,6 +147,7 @@ res = s.ap_is.get_api(req)
 if res.api is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 

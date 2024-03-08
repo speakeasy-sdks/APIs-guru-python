@@ -24,12 +24,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetAPIRequest, base_url, '/specs/{provider}/{api}.json', request)
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -51,18 +51,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAPIResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAPIResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.API])
                 res.api = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -77,12 +79,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/metrics.json'
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -104,18 +106,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMetricsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Metrics])
                 res.metrics = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -130,12 +134,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetProviderRequest, base_url, '/{provider}.json', request)
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -157,18 +161,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetProviderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetProviderResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[Dict[str, shared.API]])
                 res.ap_is = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -182,12 +188,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/providers.json'
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -209,18 +215,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetProvidersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetProvidersResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetProvidersResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -234,12 +242,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetServiceAPIRequest, base_url, '/specs/{provider}/{service}/{api}.json', request)
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -261,18 +269,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetServiceAPIResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetServiceAPIResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.API])
                 res.api = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -286,12 +296,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetServicesRequest, base_url, '/{provider}/services.json', request)
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -313,18 +323,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetServicesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetServicesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetServicesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -342,12 +354,12 @@ class APIs:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/list.json'
+        
         headers = {}
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -369,18 +381,20 @@ class APIs:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ListAPIsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ListAPIsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[Dict[str, shared.API]])
                 res.ap_is = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 

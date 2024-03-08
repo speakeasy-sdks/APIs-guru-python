@@ -15,5 +15,6 @@ res = s.ap_is.get_api(req)
 if res.api is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
